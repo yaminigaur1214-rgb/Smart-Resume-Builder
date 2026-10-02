@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* =========================================
+   PRINT / PDF
+   ========================================= */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+
+  html,
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    background: white !important;
+  }
+
+  /* Hide navbar */
+  nav {
+    display: none !important;
+  }
+
+  /*
+    Hide the Builder screen layout.
+    The resume itself will be displayed separately.
+  */
+  .resume-builder-page {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+
+  /* Hide Builder header and buttons */
+.resume-builder-page > div:first-child {
+  display: none !important;
+}
+  .resume-builder-content {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .resume-form {
+    display: none !important;
+  }
+
+  .resume-preview-container {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Actual resume */
+  .resume-preview {
+    display: block !important;
+
+    position: static !important;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    min-height: auto !important;
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: white !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    color: #1f2937 !important;
+  }
+
+  .resume-preview section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .resume-preview h1,
+  .resume-preview h2,
+  .resume-preview h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+}
